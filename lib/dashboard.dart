@@ -18,9 +18,10 @@ class _DashboardState extends State<Dashboard> {
 
   List screens = [
     Home(
-        name: "nameController.text",
-        email: "emailController.text",
-        password: "passwordController.text"),
+        // name: "nameController.text",
+        // email: "emailController.text",
+        // password: "passwordController.text"
+        ),
     First()
   ];
   int index = 0;

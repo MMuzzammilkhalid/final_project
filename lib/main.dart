@@ -18,11 +18,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        initialRoute: "/",
-        onGenerateRoute: Routes.generateRoute,
-        theme: themeData
-        // home: SignUp(),
-        );
+      title: 'Flutter Demo',
+      initialRoute: "/",
+      onGenerateRoute: Routes.generateRoute,
+      theme: themeData,
+      debugShowCheckedModeBanner: false,
+      // home: SignUp(),
+    );
   }
 }

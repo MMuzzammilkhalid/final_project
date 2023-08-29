@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:mamas_recipe/firstScreen.dart';
 
 import 'dashboard.dart';
 import 'home.dart';
@@ -47,60 +48,79 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Login"),
+        leading: BackButtonIcon(),
+        title: const Text("Log In", style: TextStyle(fontSize: 20)),
       ),
-      body: Form(
-        key: _formKey,
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: [
-              TextFormField(
-                controller: _emailController,
-                validator: (String? value) {
-                  if (value!.isEmpty) {
-                    return "Email field cannot be empty";
-                  } else if (emailValidate.hasMatch(value)) {
-                    return null;
-                  } else {
-                    return "Invalid Email";
-                  }
-                },
-                decoration: const InputDecoration(
-                    hintText: "Please enter your Email",
-                    label: Text("Email"),
-                    border: OutlineInputBorder()),
-              ),
-              const SizedBox(
-                height: 16,
-              ),
-              TextFormField(
-                controller: _passwordController,
-                validator: (String? value) {
-                  if (value == "") {
-                    return "password field cannot be empty";
-                  } else if (value!.length < 8) {
-                    return "Password length must be greater than 8";
-                  } else {
-                    return null;
-                  }
-                },
-                decoration: const InputDecoration(
-                    hintText: "Please enter your Password",
-                    label: Text("Password"),
-                    border: OutlineInputBorder()),
-              ),
-              const SizedBox(
-                height: 16,
-              ),
-              ElevatedButton(
-                  onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      LogIn();
+      body: SingleChildScrollView(
+        child: Form(
+          key: _formKey,
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/logo1.png',
+                        height: MediaQuery.of(context).size.height / 2.5,
+                      ), // Use your logo path here
+                      SizedBox(
+                        height: 5,
+                      ),
+                      // CircularProgressIndicator(), // You can add a loading indicator if needed
+                    ],
+                  ),
+                ),
+                TextFormField(
+                  controller: _emailController,
+                  validator: (String? value) {
+                    if (value!.isEmpty) {
+                      return "Email field cannot be empty";
+                    } else if (emailValidate.hasMatch(value)) {
+                      return null;
+                    } else {
+                      return "Invalid Email";
                     }
                   },
-                  child: const Text("Login"))
-            ],
+                  decoration: const InputDecoration(
+                      hintText: "Please enter your Email",
+                      label: Text("Email"),
+                      border: OutlineInputBorder()),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                TextFormField(
+                  controller: _passwordController,
+                  validator: (String? value) {
+                    if (value == "") {
+                      return "password field cannot be empty";
+                    } else if (value!.length < 8) {
+                      return "Password length must be greater than 8";
+                    } else {
+                      return null;
+                    }
+                  },
+                  decoration: const InputDecoration(
+                      hintText: "Please enter your Password",
+                      label: Text("Password"),
+                      border: OutlineInputBorder()),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                ElevatedButton(
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        LogIn();
+                      }
+                    },
+                    child:
+                        const Text("Log In", style: TextStyle(fontSize: 30))),
+              ],
+            ),
           ),
         ),
       ),

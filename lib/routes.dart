@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mamas_recipe/firstScreen.dart';
+import 'package:mamas_recipe/splashScreen.dart';
 import 'arguments.dart';
 import 'home.dart';
 
@@ -12,15 +13,15 @@ class Routes {
       case defaultRoute:
         var args = settings.arguments;
         return MaterialPageRoute(
-          builder: (_) => const First(),
+          builder: (_) => SplashScreen(),
         );
       case homeRoute:
         var args = settings.arguments as HomeArguments;
         return MaterialPageRoute(
             builder: (_) => Home(
-                  email: args.email,
-                  name: args.name,
-                  password: args.password,
+                // email: args.email,
+                // name: args.name,
+                // password: args.password,
                 ));
       default:
         return MaterialPageRoute(

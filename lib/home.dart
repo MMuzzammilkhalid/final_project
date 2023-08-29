@@ -3,15 +3,7 @@ import 'package:flutter/material.dart';
 import 'firstScreen.dart';
 
 class Home extends StatefulWidget {
-  const Home(
-      {super.key,
-      required this.name,
-      required this.email,
-      required this.password});
-
-  final String name;
-  final String email;
-  final String password;
+  const Home({super.key});
 
   @override
   State<Home> createState() => _HomeState();
@@ -29,7 +21,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Mamas Recipe"),
+        title: const Text("Categories"),
         actions: [
           GestureDetector(
               onTap: () {
@@ -41,144 +33,178 @@ class _HomeState extends State<Home> {
                       ));
                 });
               },
-              child: Icon(Icons.person)),
+              child: const Icon(Icons.person)),
         ],
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(20),
-            child: Row(
-              children: [
-                Container(
-                    height: 100,
-                    width: 140,
-                    decoration: BoxDecoration(
-                        border: Border.all(style: BorderStyle.solid),
-                        borderRadius: BorderRadius.circular(15),
-                        image: DecorationImage(
-                            image: img1.image, opacity: 0.6, fit: BoxFit.fill)),
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          bottom: 45,
-                          left: 20,
-                          child: Text("Pakistani Dishes"),
-                        )
-                      ],
-                    )),
-                SizedBox(
-                  width: 20,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: Row(
+                  children: [
+                    Container(
+                        width: MediaQuery.of(context).size.width / 2.5,
+                        height: MediaQuery.of(context).size.height / 4,
+                        decoration: BoxDecoration(
+                            border: Border.all(style: BorderStyle.solid),
+                            borderRadius: BorderRadius.circular(15),
+                            image: DecorationImage(
+                                image: img1.image,
+                                opacity: 0.6,
+                                fit: BoxFit.fill)),
+                        child: Stack(
+                          children: [
+                            Positioned(
+                              bottom: MediaQuery.of(context).size.width / 7,
+                              child: const Text(
+                                "Pakistani Dishes",
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.black),
+                              ),
+                            )
+                          ],
+                        )),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                        width: MediaQuery.of(context).size.width / 2.5,
+                        height: MediaQuery.of(context).size.height / 4,
+                        decoration: BoxDecoration(
+                            border: Border.all(style: BorderStyle.solid),
+                            borderRadius: BorderRadius.circular(15),
+                            image: DecorationImage(
+                                image: img2.image,
+                                opacity: 0.6,
+                                fit: BoxFit.fill)),
+                        child: Stack(
+                          children: [
+                            Positioned(
+                              bottom: MediaQuery.of(context).size.width / 7,
+                              child: const Text(
+                                "Arabian Dishes",
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.black),
+                              ),
+                            )
+                          ],
+                        )),
+                  ],
                 ),
-                Container(
-                    height: 100,
-                    width: 140,
-                    decoration: BoxDecoration(
-                        border: Border.all(style: BorderStyle.solid),
-                        borderRadius: BorderRadius.circular(15),
-                        image: DecorationImage(
-                            image: img2.image, opacity: 0.6, fit: BoxFit.fill)),
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          bottom: 45,
-                          left: 20,
-                          child: Text("Arabian Dishes"),
-                        )
-                      ],
-                    )),
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(20),
-            child: Row(
-              children: [
-                Container(
-                    height: 100,
-                    width: 140,
-                    decoration: BoxDecoration(
-                        border: Border.all(style: BorderStyle.solid),
-                        borderRadius: BorderRadius.circular(15),
-                        image: DecorationImage(
-                            image: img3.image, opacity: 0.6, fit: BoxFit.fill)),
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          bottom: 45,
-                          left: 20,
-                          child: Text("Indian Dishes"),
-                        )
-                      ],
-                    )),
-                SizedBox(
-                  width: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: Row(
+                  children: [
+                    Container(
+                        width: MediaQuery.of(context).size.width / 2.5,
+                        height: MediaQuery.of(context).size.height / 4,
+                        decoration: BoxDecoration(
+                            border: Border.all(style: BorderStyle.solid),
+                            borderRadius: BorderRadius.circular(15),
+                            image: DecorationImage(
+                                image: img3.image,
+                                opacity: 0.6,
+                                fit: BoxFit.fill)),
+                        child: Stack(
+                          children: [
+                            Positioned(
+                              bottom: MediaQuery.of(context).size.width / 7,
+                              child: const Text(
+                                "Indian Dishes",
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.black),
+                              ),
+                            )
+                          ],
+                        )),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                        width: MediaQuery.of(context).size.width / 2.5,
+                        height: MediaQuery.of(context).size.height / 4,
+                        decoration: BoxDecoration(
+                            border: Border.all(style: BorderStyle.solid),
+                            borderRadius: BorderRadius.circular(15),
+                            image: DecorationImage(
+                                image: img4.image,
+                                opacity: 0.6,
+                                fit: BoxFit.fill)),
+                        child: Stack(
+                          children: [
+                            Positioned(
+                              bottom: MediaQuery.of(context).size.width / 7,
+                              child: const Text(
+                                "Chinese Dishes",
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.black),
+                              ),
+                            )
+                          ],
+                        )),
+                  ],
                 ),
-                Container(
-                    height: 100,
-                    width: 140,
-                    decoration: BoxDecoration(
-                        border: Border.all(style: BorderStyle.solid),
-                        borderRadius: BorderRadius.circular(15),
-                        image: DecorationImage(
-                            image: img4.image, opacity: 0.6, fit: BoxFit.fill)),
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          bottom: 45,
-                          left: 20,
-                          child: Text("Chinese Dishes"),
-                        )
-                      ],
-                    )),
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(20),
-            child: Row(
-              children: [
-                Container(
-                    height: 100,
-                    width: 140,
-                    decoration: BoxDecoration(
-                        border: Border.all(style: BorderStyle.solid),
-                        borderRadius: BorderRadius.circular(15),
-                        image: DecorationImage(
-                            image: img5.image, opacity: 0.6, fit: BoxFit.fill)),
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          bottom: 45,
-                          left: 20,
-                          child: Text("Italian Dishes"),
-                        )
-                      ],
-                    )),
-                SizedBox(
-                  width: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: Row(
+                  children: [
+                    Container(
+                        width: MediaQuery.of(context).size.width / 2.5,
+                        height: MediaQuery.of(context).size.height / 4,
+                        decoration: BoxDecoration(
+                            border: Border.all(style: BorderStyle.solid),
+                            borderRadius: BorderRadius.circular(15),
+                            image: DecorationImage(
+                                image: img5.image,
+                                opacity: 0.6,
+                                fit: BoxFit.fill)),
+                        child: Stack(
+                          children: [
+                            Positioned(
+                              bottom: MediaQuery.of(context).size.width / 7,
+                              child: const Text(
+                                "Italian Dishes",
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.black),
+                              ),
+                            )
+                          ],
+                        )),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                        width: MediaQuery.of(context).size.width / 2.5,
+                        height: MediaQuery.of(context).size.height / 4,
+                        decoration: BoxDecoration(
+                            border: Border.all(style: BorderStyle.solid),
+                            borderRadius: BorderRadius.circular(15),
+                            image: DecorationImage(
+                                image: img6.image,
+                                opacity: 0.6,
+                                fit: BoxFit.fill)),
+                        child: Stack(
+                          children: [
+                            Positioned(
+                              bottom: MediaQuery.of(context).size.width / 7,
+                              child: const Text(
+                                "Mexican Dishes",
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.black),
+                              ),
+                            )
+                          ],
+                        )),
+                  ],
                 ),
-                Container(
-                    height: 100,
-                    width: 140,
-                    decoration: BoxDecoration(
-                        border: Border.all(style: BorderStyle.solid),
-                        borderRadius: BorderRadius.circular(15),
-                        image: DecorationImage(
-                            image: img6.image, opacity: 0.6, fit: BoxFit.fill)),
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          bottom: 45,
-                          left: 20,
-                          child: Text("Mexican Dishes"),
-                        )
-                      ],
-                    )),
-              ],
-            ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

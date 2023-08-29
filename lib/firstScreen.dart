@@ -13,47 +13,60 @@ class _FirstState extends State<First> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(children: [
-        Padding(
-          padding: const EdgeInsets.all(60),
-          child: CircleAvatar(
-            radius: 100,
-            child: Image.asset("assets/1.png"),
-          ),
+      appBar: AppBar(
+        leading: BackButtonIcon(),
+        title: Text("LogIn OR SignUp"),
+      ),
+      backgroundColor: Colors.red.shade600,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(children: [
+            Padding(
+              padding: EdgeInsets.all(20),
+              child: CircleAvatar(
+                backgroundColor: Colors.transparent,
+                backgroundImage: const AssetImage("assets/logo1.png"),
+                radius: MediaQuery.of(context).size.height / 4.5,
+              ),
+            ),
+            ElevatedButton(
+              style: const ButtonStyle(),
+              child: const Text("Sign Up", style: TextStyle(fontSize: 50)),
+              onPressed: () {
+                setState(() {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SignUp(),
+                      ));
+                });
+              },
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const Text(
+              "OR",
+              style: TextStyle(color: Colors.black, fontSize: 20),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            ElevatedButton(
+              child: const Text("Log In", style: TextStyle(fontSize: 50)),
+              onPressed: () {
+                setState(() {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Login(),
+                      ));
+                });
+              },
+            )
+          ]),
         ),
-        ElevatedButton(
-          style: const ButtonStyle(),
-          child: const Text("Sign Up"),
-          onPressed: () {
-            setState(() {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const SignUp(),
-                  ));
-            });
-          },
-        ),
-        const SizedBox(
-          height: 10,
-        ),
-        const Text("OR"),
-        const SizedBox(
-          height: 10,
-        ),
-        ElevatedButton(
-          child: const Text("Login"),
-          onPressed: () {
-            setState(() {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const Login(),
-                  ));
-            });
-          },
-        )
-      ]),
+      ),
     );
   }
 }
