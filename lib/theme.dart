@@ -20,7 +20,7 @@ final themeData = ThemeData(
     bodyMedium: TextStyle(
         fontWeight: FontWeight.bold,
         fontStyle: FontStyle.italic,
-        color: Colors.white),
+        color: Colors.black),
   ),
   inputDecorationTheme: InputDecorationTheme(
     enabledBorder: OutlineInputBorder(

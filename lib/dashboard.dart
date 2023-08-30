@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mamas_recipe/personalRecipes.dart';
 
-import 'firstScreen.dart';
 import 'home.dart';
-import 'signUp.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -22,7 +21,7 @@ class _DashboardState extends State<Dashboard> {
         // email: "emailController.text",
         // password: "passwordController.text"
         ),
-    First()
+    RecipeApp()
   ];
   int index = 0;
 
@@ -37,7 +36,7 @@ class _DashboardState extends State<Dashboard> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite_outline),
-            label: 'Favorites',
+            label: 'Personal Recipes',
           ),
         ],
         currentIndex: index,

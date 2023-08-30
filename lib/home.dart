@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mamas_recipe/Pakistani/PakList.dart';
+import 'package:mamas_recipe/profile.dart';
 
 import 'firstScreen.dart';
 
@@ -29,7 +31,7 @@ class _HomeState extends State<Home> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const First(),
+                        builder: (context) => Profile(),
                       ));
                 });
               },
@@ -44,28 +46,37 @@ class _HomeState extends State<Home> {
                 padding: const EdgeInsets.all(20),
                 child: Row(
                   children: [
-                    Container(
-                        width: MediaQuery.of(context).size.width / 2.5,
-                        height: MediaQuery.of(context).size.height / 4,
-                        decoration: BoxDecoration(
-                            border: Border.all(style: BorderStyle.solid),
-                            borderRadius: BorderRadius.circular(15),
-                            image: DecorationImage(
-                                image: img1.image,
-                                opacity: 0.6,
-                                fit: BoxFit.fill)),
-                        child: Stack(
-                          children: [
-                            Positioned(
-                              bottom: MediaQuery.of(context).size.width / 7,
-                              child: const Text(
-                                "Pakistani Dishes",
-                                style: TextStyle(
-                                    fontSize: 16, color: Colors.black),
-                              ),
-                            )
-                          ],
-                        )),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context) {
+                            return const PakDishes();
+                          },
+                        ));
+                      },
+                      child: Container(
+                          width: MediaQuery.of(context).size.width / 2.5,
+                          height: MediaQuery.of(context).size.height / 4,
+                          decoration: BoxDecoration(
+                              border: Border.all(style: BorderStyle.solid),
+                              borderRadius: BorderRadius.circular(15),
+                              image: DecorationImage(
+                                  image: img1.image,
+                                  opacity: 0.6,
+                                  fit: BoxFit.fill)),
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                bottom: MediaQuery.of(context).size.width / 7,
+                                child: const Text(
+                                  "Pakistani Dishes",
+                                  style: TextStyle(
+                                      fontSize: 16, color: Colors.black),
+                                ),
+                              )
+                            ],
+                          )),
+                    ),
                     const SizedBox(
                       width: 20,
                     ),
