@@ -1,20 +1,18 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:mamas_recipe/personalList.dart';
+import 'package:mamas_recipe/personalRecipes.dart';
 
 class AddRecipeScreen extends StatefulWidget {
   final CollectionReference recipesCollection;
 
-  const AddRecipeScreen(
-      {super.key, required this.recipesCollection, required this.recipeList});
-
-  final List<Map<String, String>> recipeList;
+  AddRecipeScreen({required this.recipesCollection});
 
   @override
   _AddRecipeScreenState createState() => _AddRecipeScreenState();
 }
 
 class _AddRecipeScreenState extends State<AddRecipeScreen> {
-  // final CollectionReference recipesCollection;
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _recipeController = TextEditingController();

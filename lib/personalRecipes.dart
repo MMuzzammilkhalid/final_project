@@ -12,9 +12,6 @@ class RecipeApp extends StatefulWidget {
 }
 
 class _RecipeAppState extends State<RecipeApp> {
-  final List<Map<String, String>> _recipeList = [];
-  // late final CollectionReference recipesCollection;
-
   late CollectionReference _recipesCollection;
 
   @override
@@ -24,6 +21,7 @@ class _RecipeAppState extends State<RecipeApp> {
         .collection('recipes'); // Replace 'recipes' with your collection name
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -38,17 +36,12 @@ class _RecipeAppState extends State<RecipeApp> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => AddRecipeScreen(
-                      recipeList: _recipeList,
-                      recipesCollection: _recipesCollection,
-                    ),
+                    builder: (context) =>
+                        AddRecipeScreen(recipesCollection: _recipesCollection),
                   ),
                 );
               },
               child: Text('Add Recipe'),
-            ),
-            SizedBox(
-              height: 10,
             ),
             ElevatedButton(
               onPressed: () {
@@ -56,7 +49,7 @@ class _RecipeAppState extends State<RecipeApp> {
                   context,
                   MaterialPageRoute(
                     builder: (context) =>
-                        RecipeListScreen(recipeList: _recipeList),
+                        RecipeListScreen(recipesCollection: _recipesCollection),
                   ),
                 );
               },
