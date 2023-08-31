@@ -148,7 +148,7 @@ class _SignUpState extends State<SignUp> {
                       }
                     },
                     child:
-                        const Text("Log In", style: TextStyle(fontSize: 30))),
+                        const Text("Sign up", style: TextStyle(fontSize: 30))),
               ],
             ),
           ),

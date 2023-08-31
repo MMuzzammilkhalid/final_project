@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 final themeData = ThemeData(
+  fontFamily: "Roboto",
   iconTheme: IconThemeData(color: Colors.yellow),
   primarySwatch: MaterialColor(0xff880808, <int, Color>{
     50: Colors.red.shade50,

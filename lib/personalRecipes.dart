@@ -25,7 +25,7 @@ class _RecipeAppState extends State<RecipeApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Recipe App'),
+        title: Text('Personal Recipes'),
       ),
       body: Center(
         child: Column(

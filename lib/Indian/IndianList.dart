@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 
-import 'AlooKeema.dart';
-import 'biryani.dart';
-import 'ChapliKabab.dart';
-import 'Nihari.dart';
-import 'Samosa.dart';
+import 'ChickenCurry.dart';
+import 'DalMakhni.dart';
+import 'PalakPaneer.dart';
+import 'PaneerTikka.dart';
+import 'VegBiryani.dart';
 
-class PakDishes extends StatefulWidget {
-  const PakDishes({super.key});
+class IndianDishes extends StatefulWidget {
+  const IndianDishes({super.key});
 
   @override
-  State<PakDishes> createState() => _PakDishesState();
+  State<IndianDishes> createState() => _IndianDishesState();
 }
 
-class _PakDishesState extends State<PakDishes> {
+class _IndianDishesState extends State<IndianDishes> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Pakistani Dishes")),
+      appBar: AppBar(title: Text("Indian Dishes")),
       body: Padding(
           padding: EdgeInsets.only(top: 20),
           child: Column(
@@ -25,13 +25,13 @@ class _PakDishesState extends State<PakDishes> {
             children: [
               GestureDetector(
                 child: Text(
-                  "1.   Biryani",
+                  "1.   Chicken Curry",
                   style: TextStyle(fontSize: 30),
                 ),
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Biryani()),
+                    MaterialPageRoute(builder: (context) => ChickenCurry()),
                   );
                 },
               ),
@@ -43,11 +43,11 @@ class _PakDishesState extends State<PakDishes> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Nihari()),
+                    MaterialPageRoute(builder: (context) => DalMakhni()),
                   );
                 },
                 child: Text(
-                  "2.   Nihari",
+                  "2.   Dal Makhni",
                   style: TextStyle(fontSize: 30),
                 ),
               ),
@@ -59,11 +59,11 @@ class _PakDishesState extends State<PakDishes> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => AlooKeema()),
+                    MaterialPageRoute(builder: (context) => PalakPaneer()),
                   );
                 },
                 child: Text(
-                  "3.   Aloo Keema",
+                  "3.   Palak Paneer",
                   style: TextStyle(fontSize: 30),
                 ),
               ),
@@ -75,11 +75,11 @@ class _PakDishesState extends State<PakDishes> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ChapliKabab()),
+                    MaterialPageRoute(builder: (context) => PaneerTikka()),
                   );
                 },
                 child: Text(
-                  "4.   Chapli Kabab",
+                  "4.   Paneer Tikka",
                   style: TextStyle(fontSize: 30),
                 ),
               ),
@@ -91,11 +91,11 @@ class _PakDishesState extends State<PakDishes> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Samosa()),
+                    MaterialPageRoute(builder: (context) => VegBiryani()),
                   );
                 },
                 child: Text(
-                  "5.   Samosa",
+                  "5.   Vegetable Biryani",
                   style: TextStyle(fontSize: 30),
                 ),
               ),

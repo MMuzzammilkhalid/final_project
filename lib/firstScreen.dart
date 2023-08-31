@@ -31,7 +31,7 @@ class _FirstState extends State<First> {
             ),
             ElevatedButton(
               style: const ButtonStyle(),
-              child: const Text("Sign Up", style: TextStyle(fontSize: 50)),
+              child: const Text("Sign Up", style: TextStyle(fontSize: 30)),
               onPressed: () {
                 setState(() {
                   Navigator.push(
@@ -53,7 +53,7 @@ class _FirstState extends State<First> {
               height: 10,
             ),
             ElevatedButton(
-              child: const Text("Log In", style: TextStyle(fontSize: 50)),
+              child: const Text("Log In", style: TextStyle(fontSize: 31)),
               onPressed: () {
                 setState(() {
                   Navigator.push(
